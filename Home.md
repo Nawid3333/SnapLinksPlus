@@ -3,6 +3,12 @@ With Snap Links Plus you can open multiple links in to new tabs by drawing a sel
 
 # Version history of Snap Links Plus
 
+## 2.3.2
+* New Feature: IMG/SPAN/DIV elements with cursor: pointer are now eligible for lassoing as well.
+* New Feature / Fix: Links which are completely overlapped by other links elements are no longer eligible for opening, this happens on Google images for example.
+* New Feature: Starting a drag from an A element will limit selection of links that are the same size as the original link.
+* Various Bugs Fixed ([See Commit History](https://github.com/cpriest/SnapLinksPlus/commits/master))
+
 <h2>2.3.1</h2>
 <p>3 Sep 2012, Clint Priest & Tommi Rautava</p>
 <ul>
