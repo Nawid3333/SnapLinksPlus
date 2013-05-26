@@ -1,4 +1,5 @@
-Welcome to the SnapLinksPlus wiki!
+# About Snap Links Plus
+With Snap Links Plus you can open multiple links in to new tabs by drawing a selection rectangle. You can also use it to click multiple check boxes, a single radio button, regular buttons and JavaScript links with a single action. Many other actions are available for the selected links such as open links in one new window, open each link in separate windows, copy links to the clipboard and more.
 
 # Version history of Snap Links Plus
 
