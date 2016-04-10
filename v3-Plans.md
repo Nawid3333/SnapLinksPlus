@@ -1,5 +1,5 @@
 ### Version 3 in the works
-Snap Links v3 is in the works though progress is going slowly.  This is due to the change to [Multiorocess Firefox]( and that [XUL based](https://developer.mozilla.org/en-US/Add-ons/Overlay_Extensions) add-ons are being deprecated in favor of [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions).
+Snap Links v3 is in the works though progress is going slowly.  This is due to the change to [Multiprocess Firefox](https://developer.mozilla.org/en-US/Firefox/Multiprocess_Firefox) and that [XUL based](https://developer.mozilla.org/en-US/Add-ons/Overlay_Extensions) add-ons are being deprecated in favor of [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions).
 
 This also means the first release versions will be much less feature-full than the now in maintenance-only development v2 line.
 
