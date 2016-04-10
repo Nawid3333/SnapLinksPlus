@@ -1,7 +1,15 @@
 # About Snap Links Plus
 With Snap Links Plus you can open multiple links in to new tabs by drawing a selection rectangle. You can also use it to click multiple check boxes, a single radio button, regular buttons and JavaScript links with a single action. Many other actions are available for the selected links such as open links in one new window, open each link in separate windows, copy links to the clipboard and more.
 
+# Version 3 Coming
+Apr 2016, Clint Priest
+
+[SnapLinks v3](https://github.com/cpriest/SnapLinksPlus/wiki/v3-Plans) is in progress.  Times have changed in my life and very little time is available for this project, anyone is welcome to contribute to the progress.  Coding, Wiki-pages, Feature Requests/Organization, etc.
+
 # Version history of Snap Links Plus
+
+## 2.3.4
+* Maintenance Release from contributors.
 
 ## 2.3.2
 * New Feature: IMG/SPAN/DIV elements with cursor: pointer are now eligible for lassoing as well.
