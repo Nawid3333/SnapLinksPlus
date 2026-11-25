@@ -1,0 +1,1 @@
+A small update: point 3 isn't needed after all. Firefox no longer has the `webextensions.storage.sync.enabled` setting (I checked Firefox 161), so sync storage can't be turned off that way in any Firefox version Snap Links supports. Points 1 and 2 stand as they are.

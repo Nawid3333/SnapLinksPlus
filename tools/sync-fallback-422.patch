@@ -1,0 +1,147 @@
+diff --git a/src/StoragePrefs.js b/src/StoragePrefs.js
+index 6b20232..1ebc37a 100644
+--- a/src/StoragePrefs.js
++++ b/src/StoragePrefs.js
+@@ -41,8 +41,9 @@ class StoragePrefs {
+ 		this.id       = 'XX';	// GetSimpleLocationHash(2)
+ 		this.Defaults = Defaults;
+ 
+-		this.Observers = [];
+-		this.Values    = undefined;
++		this.Observers       = [];
++		this.Values          = undefined;
++		this.SyncUnavailable = false;
+ 
+ 		this.Ready = this.SetupStorageAPI(Options.StorageAPI || 'auto');
+ 		this.Ready.then((res, rej) => {
+@@ -196,7 +197,19 @@ class StoragePrefs {
+ 						? browser.storage.local
+ 						: browser.storage.sync;
+ 
+-		this.Values            = await this.storage.get();
++		try {
++			this.Values = await this.storage.get();
++		} catch(e) {
++			if(this.storage !== browser.storage.sync)
++				throw e;
++
++			// Sync storage can be turned off: webextensions.storage.sync.enabled in Firefox, and by default in Tor Browser (#422)
++			console.warn(`Snap Links: sync storage is not available, using local storage instead: ${e}`);
++			this.SyncUnavailable = true;
++			StorageAPI           = 'local';
++			this.storage         = browser.storage.local;
++			this.Values          = await this.storage.get();
++		}
+ 		this.Values.StorageAPI = StorageAPI;
+ 
+ //		console.log(`${this.id}: storage.${StorageAPI}.get(), Values = `, this.Values);
+diff --git a/src/html/options.html b/src/html/options.html
+index 23daa1f..77df3aa 100644
+--- a/src/html/options.html
++++ b/src/html/options.html
+@@ -242,6 +242,7 @@
+ 		<option value="sync">Sync storage</option>
+ 		<option value="local">Local storage</option>
+ 	</select>
++	<p id="SyncUnavailable" hidden>Sync storage is turned off in this browser, so Snap Links keeps its settings on this computer.</p>
+ 
+ 	<details id="UI_DevOptions_Section">
+ 		<summary>Developer Options</summary>
+diff --git a/src/lib/Options.js b/src/lib/Options.js
+index 885d0bf..dc9e50c 100644
+--- a/src/lib/Options.js
++++ b/src/lib/Options.js
+@@ -76,10 +76,19 @@ class Options {
+ 				devModeElem.addEventListener('change', UpdateCheckboxState);
+ 				UpdateCheckboxState();
+ 			})
++			.then(() => this.SetupSyncUnavailable())
+ 			.then(() => this.SetupBookmarkPermission())
+ 			.then(() => this.SetupSitesPermission());
+ 	}
+ 
++	SetupSyncUnavailable() {
++		if(!this.prefs.SyncUnavailable)
++			return;
++
++		$('#StorageAPI')[0].disabled     = true;
++		$('#SyncUnavailable')[0].hidden = false;
++	}
++
+ 	/**
+ 	 * Without access to all websites (see ALL_SITES_PERMISSION) an Allow button is shown, which asks for it.  The note follows
+ 	 * changes made elsewhere too, eg: in the Permissions tab next to this page in about:addons.
+diff --git a/tests/test.Options.js b/tests/test.Options.js
+index 1428717..8038b36 100644
+--- a/tests/test.Options.js
++++ b/tests/test.Options.js
+@@ -358,3 +358,22 @@ describe('access to all websites (Manifest V3)', () => {
+ 		expect(el('SitesPermission').hidden).toBe(true);
+ 	});
+ });
++
++describe('sync storage turned off in the browser (#422)', () => {
++	test('the storage choice is disabled, shows local storage, and a note says why', async () => {
++		let { storage } = makeBrowser();
++		storage.sync.get = jest.fn(async () => { throw new Error('Please set webextensions.storage.sync.enabled to true in about:config'); });
++		await load({}, { storage });
++
++		expect(el('StorageAPI').disabled).toBe(true);
++		expect(el('StorageAPI').value).toBe('local');
++		expect(el('SyncUnavailable').hidden).toBe(false);
++	});
++
++	test('while sync storage works, the choice stays enabled and the note hidden', async () => {
++		await load();
++
++		expect(el('StorageAPI').disabled).toBe(false);
++		expect(el('SyncUnavailable').hidden).toBe(true);
++	});
++});
+diff --git a/tests/test.StoragePrefs.js b/tests/test.StoragePrefs.js
+index 14029e6..9be7b13 100644
+--- a/tests/test.StoragePrefs.js
++++ b/tests/test.StoragePrefs.js
+@@ -187,3 +187,42 @@ describe('MigratePrefs (globals.js)', () => {
+ 		expect(run('globalThis.__errors')[0]).toMatch(/MigratePrefs\(\) failed.*quota exceeded/);
+ 	});
+ });
++
++describe('sync storage turned off in the browser (#422)', () => {
++	/** Firefox with webextensions.storage.sync.enabled = false (and Tor Browser) rejects every sync storage call */
++	async function setupSyncOff(local = {}) {
++		let browser = makeBrowser({ local });
++		for(let method of ['get', 'set', 'remove'])
++			browser.storage.sync[method] = jest.fn(async () => { throw new Error('Please set webextensions.storage.sync.enabled to true in about:config'); });
++
++		let { run } = loadScripts(['StoragePrefs.js', 'globals.js'], browser);
++		let prefs   = run('(Defaults) => new StoragePrefs(Defaults, { StorageAPI: "auto" })')(Defaults);
++
++		await prefs.Ready;
++
++		return { prefs, browser };
++	}
++
++	test('the settings load from local storage instead', async () => {
++		let { prefs } = await setupSyncOff({ Alpha: 'from-local' });
++
++		expect(prefs.Alpha).toBe('from-local');
++		expect(prefs.StorageAPI).toBe('local');
++		expect(prefs.SyncUnavailable).toBe(true);
++	});
++
++	test('changes are saved to local storage', async () => {
++		let { prefs, browser } = await setupSyncOff();
++
++		prefs.Alpha = 5;
++		await flush();
++
++		expect(browser.storage.local.data.Alpha).toBe(5);
++	});
++
++	test('SyncUnavailable is false while sync storage works', async () => {
++		let { prefs } = await setup();
++
++		expect(prefs.SyncUnavailable).toBe(false);
++	});
++});
