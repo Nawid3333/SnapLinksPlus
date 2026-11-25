@@ -1,0 +1,7 @@
+I ran into this on https://www.mangaupdates.com/site/search/result?search=necromancer (Firefox 161, Snap Links 3.2.1): no lasso box, and the counter ("4 Links") sits at the left edge of the page instead of next to the cursor. I found the cause, and it can be fixed in the extension.
+
+The lasso's CSS is a `<style>` element that `SelectionRect` builds with `CreateElement()` (so through `innerHTML`) and appends to the page's `<head>`. Firefox checks it against the page's CSP (bug 1267027 above). mangaupdates.com sends `style-src 'self' … 'nonce-…'` without `'unsafe-inline'`, so the sheet is blocked: the container, the rect and the label lose `position: absolute` and the outline, and the negative margins meant to line the container up with 0,0 pull the unstyled boxes to the top-left corner. Firefox exempts styles a content script sets itself ([bug 1415352](https://bugzilla.mozilla.org/show_bug.cgi?id=1415352)), but not a `<style>` element whose text came from `innerHTML`.
+
+FreshRSS sends `default-src 'self'`, and #466 (arewewaylandyet.com, `style-src 'self'`) is the same thing. It isn't new in 3.2 either: 3.1.16 does exactly the same in Firefox 161 on that page.
+
+I'm working on a PR: the lasso, the counter and the highlights get their styles through `element.style` instead of a `<style>` element or `style` attributes. A page's CSP never applies to those, not even to the page's own scripts, so it doesn't depend on Firefox's exemption for content scripts. I'll test it in Firefox and Chrome and link it here.
