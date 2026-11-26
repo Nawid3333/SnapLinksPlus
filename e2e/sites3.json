@@ -1,0 +1,14 @@
+[
+ { "name": "mangaupdates", "url": "https://www.mangaupdates.com/site/search/result?search=necromancer", "from": [150, 250], "to": [1000, 850], "waitMs": 4000 },
+ { "name": "arewewayland", "url": "https://arewewaylandyet.com/", "from": [150, 200], "to": [1000, 850] },
+ { "name": "freshrss",     "url": "https://demo.freshrss.org/i/", "from": [150, 200], "to": [1100, 850], "waitMs": 4000 },
+ { "name": "google",       "url": "https://www.google.com/search?q=firefox+extensions&hl=en", "from": [150, 200], "to": [900, 850], "waitMs": 4000 },
+ { "name": "bing",         "url": "https://www.bing.com/search?q=firefox+extensions", "from": [100, 150], "to": [900, 850], "waitMs": 4000 },
+ { "name": "lobsters",     "url": "https://lobste.rs/", "from": [0, 80], "to": [900, 700] },
+ { "name": "devto",        "url": "https://dev.to/", "from": [250, 150], "to": [1000, 880], "waitMs": 4000 },
+ { "name": "github-search","url": "https://github.com/search?q=snap+links&type=repositories", "from": [250, 150], "to": [1100, 880], "waitMs": 4000 },
+ { "name": "npm",          "url": "https://www.npmjs.com/search?q=lasso", "from": [150, 200], "to": [1100, 880], "waitMs": 4000 },
+ { "name": "twitch",       "url": "https://www.twitch.tv/directory", "from": [250, 150], "to": [1270, 880], "waitMs": 6000 },
+ { "name": "producthunt",  "url": "https://www.producthunt.com/", "from": [100, 150], "to": [900, 880], "waitMs": 5000 },
+ { "name": "medium",       "url": "https://medium.com/tag/javascript", "from": [100, 150], "to": [900, 880], "waitMs": 5000 }
+]

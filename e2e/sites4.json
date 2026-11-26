@@ -1,0 +1,115 @@
+[
+ {
+  "name": "yt-channel",
+  "url": "https://www.youtube.com/channel/UCB_xW2EH5HiQTs4UJbXQDmA",
+  "from": [
+   300,
+   300
+  ],
+  "to": [
+   1200,
+   700
+  ]
+ },
+ {
+  "name": "yt-watch",
+  "url": "https://www.youtube.com/watch?v=jfKfPfyJRdk",
+  "from": [
+   20,
+   560
+  ],
+  "to": [
+   1270,
+   900
+  ],
+  "waitMs": 5000
+ },
+ {
+  "name": "hackernews",
+  "url": "https://news.ycombinator.com/",
+  "from": [
+   0,
+   30
+  ],
+  "to": [
+   900,
+   500
+  ]
+ },
+ {
+  "name": "github-issues",
+  "url": "https://github.com/cpriest/SnapLinksPlus/issues",
+  "from": [
+   0,
+   300
+  ],
+  "to": [
+   1280,
+   850
+  ]
+ },
+ {
+  "name": "mangaupdates",
+  "url": "https://www.mangaupdates.com/site/search/result?search=necromancer",
+  "from": [
+   150,
+   250
+  ],
+  "to": [
+   1000,
+   850
+  ],
+  "waitMs": 4000
+ },
+ {
+  "name": "freshrss",
+  "url": "https://demo.freshrss.org/i/",
+  "from": [
+   150,
+   200
+  ],
+  "to": [
+   1100,
+   850
+  ],
+  "waitMs": 4000
+ },
+ {
+  "name": "lobsters",
+  "url": "https://lobste.rs/",
+  "from": [
+   0,
+   80
+  ],
+  "to": [
+   900,
+   700
+  ]
+ },
+ {
+  "name": "soundcloud",
+  "url": "https://soundcloud.com/chillhopdotcom/tracks",
+  "from": [
+   150,
+   440
+  ],
+  "to": [
+   880,
+   860
+  ],
+  "waitMs": 5000
+ },
+ {
+  "name": "soundcloud-buttons",
+  "url": "https://soundcloud.com/chillhopdotcom/tracks",
+  "from": [
+   210,
+   615
+  ],
+  "to": [
+   530,
+   665
+  ],
+  "waitMs": 5000
+ }
+]

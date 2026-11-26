@@ -176,6 +176,10 @@ export function profilePrefs({ proxyPort, idleTimeout }) {
 		'network.proxy.no_proxies_on':                                '',
 		'devtools.console.stdout.content':                            false,
 	};
+	if(proxyPort == null)	// Real network (live sites): no proxy
+		for(let k of Object.keys(p))
+			if(k.startsWith('network.proxy.'))
+				delete p[k];
 	if(idleTimeout != null)
 		p['extensions.background.idle.timeout'] = Number(idleTimeout);
 	return p;

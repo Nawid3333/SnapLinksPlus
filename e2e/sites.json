@@ -1,0 +1,211 @@
+[
+ {
+  "name": "yt-channel",
+  "url": "https://www.youtube.com/channel/UCB_xW2EH5HiQTs4UJbXQDmA",
+  "from": [
+   300,
+   300
+  ],
+  "to": [
+   1200,
+   700
+  ]
+ },
+ {
+  "name": "yt-videos",
+  "url": "https://www.youtube.com/@LinusTechTips/videos",
+  "from": [
+   100,
+   300
+  ],
+  "to": [
+   1250,
+   900
+  ]
+ },
+ {
+  "name": "yt-search",
+  "url": "https://www.youtube.com/results?search_query=lofi+hip+hop",
+  "from": [
+   90,
+   380
+  ],
+  "to": [
+   1270,
+   900
+  ]
+ },
+ {
+  "name": "yt-watch",
+  "url": "https://www.youtube.com/watch?v=jfKfPfyJRdk",
+  "from": [
+   20,
+   560
+  ],
+  "to": [
+   1270,
+   900
+  ],
+  "waitMs": 5000
+ },
+ {
+  "name": "reddit-old",
+  "url": "https://old.reddit.com/r/buildapcsales/",
+  "from": [
+   0,
+   150
+  ],
+  "to": [
+   1000,
+   650
+  ]
+ },
+ {
+  "name": "reddit-new",
+  "url": "https://www.reddit.com/r/firefox/",
+  "from": [
+   250,
+   250
+  ],
+  "to": [
+   1000,
+   900
+  ],
+  "waitMs": 4000
+ },
+ {
+  "name": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Firefox",
+  "from": [
+   250,
+   350
+  ],
+  "to": [
+   1000,
+   800
+  ]
+ },
+ {
+  "name": "hackernews",
+  "url": "https://news.ycombinator.com/",
+  "from": [
+   0,
+   30
+  ],
+  "to": [
+   900,
+   500
+  ]
+ },
+ {
+  "name": "github-repo",
+  "url": "https://github.com/cpriest/SnapLinksPlus",
+  "from": [
+   0,
+   330
+  ],
+  "to": [
+   900,
+   850
+  ]
+ },
+ {
+  "name": "github-issues",
+  "url": "https://github.com/cpriest/SnapLinksPlus/issues",
+  "from": [
+   0,
+   300
+  ],
+  "to": [
+   1280,
+   850
+  ]
+ },
+ {
+  "name": "stackoverflow",
+  "url": "https://stackoverflow.com/questions",
+  "from": [
+   150,
+   250
+  ],
+  "to": [
+   1100,
+   850
+  ]
+ },
+ {
+  "name": "bbc",
+  "url": "https://www.bbc.com/news",
+  "from": [
+   0,
+   250
+  ],
+  "to": [
+   1280,
+   900
+  ]
+ },
+ {
+  "name": "imdb-top",
+  "url": "https://www.imdb.com/chart/top/",
+  "from": [
+   100,
+   450
+  ],
+  "to": [
+   1000,
+   900
+  ],
+  "waitMs": 4000
+ },
+ {
+  "name": "amazon",
+  "url": "https://www.amazon.com/s?k=usb+c+cable",
+  "from": [
+   250,
+   250
+  ],
+  "to": [
+   1270,
+   900
+  ],
+  "waitMs": 4000
+ },
+ {
+  "name": "ebay",
+  "url": "https://www.ebay.com/sch/i.html?_nkw=usb+c+cable",
+  "from": [
+   250,
+   300
+  ],
+  "to": [
+   1270,
+   900
+  ],
+  "waitMs": 4000
+ },
+ {
+  "name": "steam",
+  "url": "https://store.steampowered.com/search/?term=racing",
+  "from": [
+   100,
+   250
+  ],
+  "to": [
+   1000,
+   900
+  ]
+ },
+ {
+  "name": "ddg",
+  "url": "https://html.duckduckgo.com/html/?q=firefox+extensions",
+  "from": [
+   0,
+   100
+  ],
+  "to": [
+   900,
+   900
+  ]
+ }
+]

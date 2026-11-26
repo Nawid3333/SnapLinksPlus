@@ -1,0 +1,7 @@
+[
+ { "name": "fx-cards",   "url": "fixture:page_controls.html", "from": [10, 110], "to": [1270, 560], "waitMs": 300 },
+ { "name": "fx-stories", "url": "fixture:page_controls.html", "scrollY": 500, "from": [10, 60], "to": [700, 400], "waitMs": 300 },
+ { "name": "fx-ranked",  "url": "fixture:page_controls.html", "scrollY": 900, "from": [10, 40], "to": [700, 230], "waitMs": 300 },
+ { "name": "fx-rows",    "url": "fixture:page_controls.html", "scrollY": 900, "from": [10, 300], "to": [600, 470], "waitMs": 300 },
+ { "name": "fx-only",    "url": "fixture:page_controls.html", "scrollY": 900, "from": [10, 520], "to": [700, 600], "waitMs": 300 }
+]
