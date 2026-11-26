@@ -1,6 +1,6 @@
 # Session notes: Manifest V3 migration (2026-11-22)
 
-This branch holds notes, nothing that ships. **Latest: [HANDOFF-2026-11-25.md](HANDOFF-2026-11-25.md)** (open PRs #603, #607-#609, posts #601, #604-#606, next steps). It has no history in common with `master`, so it can never end up in a pull request. Read this first when working on these PRs again.
+This branch holds notes, nothing that ships. **Latest: [HANDOFF-2026-11-26.md](HANDOFF-2026-11-26.md)** (project paused: what waits for cpriest, the wiki update, decisions). Before that: [HANDOFF-2026-11-25.md](HANDOFF-2026-11-25.md) (open PRs #603, #607-#609, posts #601, #604-#606). It has no history in common with `master`, so it can never end up in a pull request. Read this first when working on these PRs again.
 
 ## The pull requests (opened 2026-11-22 to cpriest/SnapLinksPlus)
 
