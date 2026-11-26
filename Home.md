@@ -1,12 +1,12 @@
 # About Snap Links Plus
-Snap Links is a browser add-on for Firefox, Chrome and Edge. Hold down the right mouse button and drag a rectangle over a page: Snap Links highlights the links, buttons, checkboxes and radio buttons inside it and, when the button is released, acts on them as described below. Pressing Escape during the drag cancels it.
+Snap Links is a browser add-on for Firefox, Chrome and Edge. Hold down the right mouse button and drag a rectangle over a page: Snap Links highlights the links, buttons, checkboxes and radio buttons it touches; an element whose middle is hidden behind another one on screen is left out. When the button is released, it acts on them as described below. Pressing Escape during the drag cancels it.
 
-* Of the links in the rectangle, only those in the biggest font are used (a bold font counts as slightly bigger), and the same goes for buttons. Holding ALT while dragging uses them all.
-* Snap Links then acts only on the kind of element it holds the most of. On a tie, links come first, then buttons, then checkboxes.
-* Links open in new tabs (the default action), as the tabs of one new window, or each in its own window. They can also be copied to the clipboard in one of several formats (such as URLs, titles, Markdown or HTML), or bookmarked in a new folder (the options page asks for access to bookmarks first). Each address is used once.
+* Of the links it touches, only those in the biggest font are used (a bold font counts as slightly bigger), and the same goes for buttons. Holding ALT while dragging uses them all, and the options page can turn this filter off.
+* Of what is left, Snap Links acts only on the kind of element there is most of. On a tie, links come first, then buttons, then checkboxes, then radio buttons.
+* What happens to links is the default action set on the options page: open them in new tabs (the default), as the tabs of one new window, or each in its own window, copy them to the clipboard in one of several formats (such as URLs, titles, Markdown or HTML), or bookmark them in a new folder (choosing this asks for access to bookmarks). Each address is used once.
 * Buttons, including links that only run a script, are clicked one after another.
-* Checkboxes are all checked, or all unchecked when most of them are checked already.
-* For radio buttons, one button in each group is selected.
+* When only real checkboxes are selected, they are all checked, or all unchecked when most of them are checked already. Elements that only act as checkboxes (such as role="checkbox") are each clicked.
+* For radio buttons, one is selected in each group of buttons that share a name.
 * Holding CTRL on release copies the links instead (or opens them in tabs, when copying is the default action). Holding SHIFT on release uses the links in the opposite of the usual order (set on the options page) for that selection only, unless SHIFT is one of the modifier keys set for selecting.
 
 The mouse button, modifier keys, default action, copy format, where new tabs open and a list of sites where Snap Links does nothing can be changed on the options page, among other settings. Version 3.2 is a Manifest V3 extension and needs Firefox 142 or later, or Chrome 116 or later.
@@ -23,7 +23,7 @@ The mouse button, modifier keys, default action, copy format, where new tabs ope
 * [Discussions](https://github.com/cpriest/SnapLinksPlus/discussions): questions and ideas
 * [v3 Plans](https://github.com/cpriest/SnapLinksPlus/wiki/v3-Plans): the 2016 plan for version 3, kept for its history
 
-# Version history before 3.0
+# Version history up to 2.3.4
 This is the history of versions 0.0.3 to 2.3.4. For 3.0 and later, see the [Release notes](https://cpriest.github.io/SnapLinksPlus/#/History).
 
 ## 2.3.4
