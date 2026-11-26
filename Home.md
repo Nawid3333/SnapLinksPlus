@@ -1,12 +1,30 @@
 # About Snap Links Plus
-With Snap Links Plus you can open multiple links in to new tabs by drawing a selection rectangle. You can also use it to click multiple check boxes, a single radio button, regular buttons and JavaScript links with a single action. Many other actions are available for the selected links such as open links in one new window, open each link in separate windows, copy links to the clipboard and more.
+Snap Links is a browser add-on for Firefox, Chrome and Edge. Hold down the right mouse button and drag a rectangle over a page: Snap Links highlights the links, checkboxes, radio buttons, buttons and other clickable elements inside it, and acts on them when the button is released.
 
-# Version 3 Coming
-Apr 2016, Clint Priest
+* Links open in new tabs (the default action), in a new window, or each in its own window. They can also be copied to the clipboard (as URLs, titles, Markdown or HTML) or bookmarked in a new folder.
+* Checkboxes are checked or unchecked, a radio button is selected, and buttons and other clickable elements are clicked.
+* When the rectangle holds more than one kind of element, Snap Links acts on the kind it holds the most of.
+* Holding CTRL on release copies the links instead (or opens them in tabs, when copying is the default action). Holding SHIFT on release reverses the order of the links for that selection only, unless SHIFT is one of the modifier keys set for selecting.
 
-[SnapLinks v3](https://github.com/cpriest/SnapLinksPlus/wiki/v3-Plans) is in progress.  Times have changed in my life and very little time is available for this project, anyone is welcome to contribute to the progress.  Coding, Wiki-pages, Feature Requests/Organization, etc.
+The mouse button, modifier keys, default action, copy format and a list of sites where Snap Links is off can be changed on the options page. Version 3.2 is a Manifest V3 extension and needs Firefox 142 or later, or Chrome 116 or later.
 
-# Version history of Snap Links Plus
+# Install
+* Firefox: [Snap Links Plus on addons.mozilla.org](https://addons.mozilla.org/firefox/addon/snaplinksplus/)
+* Chrome: [Snap Links in the Chrome Web Store](https://chromewebstore.google.com/detail/snap-links/ikglmligndmabebhnicldebpekldnabm)
+* Edge: install it from the Chrome Web Store, after allowing extensions from other stores ([Microsoft's instructions](https://support.microsoft.com/en-us/edge/add-turn-off-or-remove-extensions-in-microsoft-edge))
+
+# Documentation and help
+* [Website](https://cpriest.github.io/SnapLinksPlus/), with the [Tutorial](https://cpriest.github.io/SnapLinksPlus/#/Tutorial), the [Release notes](https://cpriest.github.io/SnapLinksPlus/#/History) for 3.0 and later, and [Contributing](https://cpriest.github.io/SnapLinksPlus/#/Contributing)
+* README: using Snap Links on [local files (file:// pages)](https://github.com/cpriest/SnapLinksPlus#local-files-file-pages) in Firefox, and [right-button drags on Linux and macOS](https://github.com/cpriest/SnapLinksPlus#gnulinux-and-macos)
+* [Issues](https://github.com/cpriest/SnapLinksPlus/issues): bug reports and feature requests. Please search for an existing issue before opening a new one.
+* [Discussions](https://github.com/cpriest/SnapLinksPlus/discussions): questions and ideas
+* [Milestones](https://github.com/cpriest/SnapLinksPlus/milestones?direction=desc&sort=completeness&state=open): what is planned for the next versions
+* [v3 Plans](https://github.com/cpriest/SnapLinksPlus/wiki/v3-Plans): the 2016 plan for version 3
+
+Help is welcome with answering questions, triaging issues, the documentation and the code: see [Contributing](https://cpriest.github.io/SnapLinksPlus/#/Contributing).
+
+# Version history before 3.0
+This is the history of versions 0.0.3 to 2.3.4. For 3.0 and later, see the [Release notes](https://cpriest.github.io/SnapLinksPlus/#/History).
 
 ## 2.3.4
 * Maintenance Release from contributors.

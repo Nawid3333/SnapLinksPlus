@@ -1,3 +1,5 @@
+> **Note, November 2026:** This is the 2016 plan for Snap Links 3, kept as it was written; the statuses in the tables are from 2016. Version 3 was released long ago (the release notes list 3.1.0.4 on 2016-11-15); Snap Links 3.2 followed in November 2026. Some links below no longer work: "Release Notes" pointed to the old `v3` branch, which no longer exists, and MDN has removed its Multiprocess Firefox and XUL overlay pages. The release notes for 3.0 and later, including the 3.0 betas, are on the [website](https://cpriest.github.io/SnapLinksPlus/#/History). Current plans are in the [milestones](https://github.com/cpriest/SnapLinksPlus/milestones?direction=desc&sort=completeness&state=open) and [issues](https://github.com/cpriest/SnapLinksPlus/issues).
+
 ### Version 3
 Version 3.0b1 is due to be released very soon, it's being reviewed by Mozilla AMO for inclusion as a beta version.
 
